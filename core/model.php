@@ -107,7 +107,7 @@ class Model extends Database
 			$result = $this->db->query($sql);
 			return ($result) ? $result : $sql.'<br>'.$this->db->error;
 		}else{
-			die('No sql')
+			die('No sql');
 		}
 	}
 
