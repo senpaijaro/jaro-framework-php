@@ -118,7 +118,7 @@ class Model extends Database
 	public function get(){
 		return  $this->db->real_escape_string($_GET[$data]);
 	}
-	
+
 }
 
 $data = new Model();
