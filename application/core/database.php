@@ -1,18 +1,18 @@
 <?php
 
-	class Database{
+	class Database {
 
-		private $dbhost = "localhost";
-		private $dbuser = "root";
-		private $dbroot = "password!@#$";
-		private $dbname = "test";
+		private static $dbhost = "localhost";
+		private static $dbuser = "root";
+		private static $dbroot = "password!@#$";
+		private static $dbname = "test";
 
 		function __construct(){
 			
 		}
 
-		public function connection(){
-			$conn = new mysqli($this->dbhost, $this->dbuser, $this->dbroot, $this->dbname);
+		public static function connection(){
+			$conn = new mysqli(self::$dbhost, self::$dbuser, self::$dbroot,self::$dbname);
 			if($conn->connect_error){
 				die('No database found'. $conn->connect_error);
 			}

@@ -1,15 +1,10 @@
 <?php 
 
-class Controller{
-	
-	function __construct(argument){
-		
+class Controller {
+
+	public static function view($viewFile,$data){
+		require_once(DOC_ROOT."application/views/$viewFile.php");
+
 	}
 
-	public function view($view){
-		$dir = ROOT_DIR.'views/'.$view.'.php';
-		$files = str_replace('controller/', '', $dir);
-		(file_exists($files)) ? include_once($files) : "";
-	}
-	
 }
