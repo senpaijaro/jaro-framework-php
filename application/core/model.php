@@ -44,7 +44,7 @@ class Model extends Database{
 			}
 			$sql = "UPDATE $table SET $values WHERE $where";
 			$result = self::connection()->query($sql);
-			return ($result) ? true : $sql.'<br>'.$this->db->error;
+			return ($result) ? true : $sql.'<br>'.self::connection()->error;
 		}else{
 			die('Data is not an array or Condition is not an array');
 		}
@@ -61,7 +61,7 @@ class Model extends Database{
 			}
 			$sql = "DELETE FROM $table WHERE $where";
 			$result = self::connection()->query($sql);
-			return ($result) ? true : $sql.'<br>'.$this->db->error;
+			return ($result) ? true : $sql.'<br>'.self::connection()->error;
 		}else{
 			die('Condition is not an array');
 		}
@@ -82,7 +82,7 @@ class Model extends Database{
 			}
 		 	$sql = "SELECT $select FROM $table $continue";
 			$result = self::connection()->query($sql);
-			return ($result) ? $result : $sql.'<br>'.$this->db->error;
+			return ($result) ? $result : $sql.'<br>'.self::connection()->error;
 		}else{
 			die('Condition is empty');
 		}
@@ -101,7 +101,7 @@ class Model extends Database{
 	public static function query($sql=""){
 		if($sql == ""){
 			$result = self::connection()->query($sql);
-			return ($result) ? $result : $sql.'<br>'.$this->db->error;
+			return ($result) ? $result : $sql.'<br>'.self::connection()->error;
 		}else{
 			die('No sql');
 		}
