@@ -7,6 +7,7 @@ class Model extends Database{
 	}
 
 	public static function insert($table,$data){
+		$db = self::connection();
 		if(is_array($data) && $table != ""){
 			$count = 0;
 			$field = "";
@@ -20,7 +21,8 @@ class Model extends Database{
 				$values .= $seperator."'".$val."'";
 			}
 			$sql = "INSERT INTO $table (".$field.") VALUES (".$values.")";
-			return ($result) ? self::connection()->insert_id : false;
+			$result = $db->query($sql);
+			return ($result) ? $db->insert_id : false;
 		}else{
 			die('Incorrect synstax please check your parameters (insert)');
 		}

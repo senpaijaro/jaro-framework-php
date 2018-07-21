@@ -8,6 +8,8 @@ class Route
 		self::$validUrl[] = $route;
 		if($_GET['url'] == $route){
 			$function->__invoke();
+		}else{
+			die('404');
 		}
 	}
 }

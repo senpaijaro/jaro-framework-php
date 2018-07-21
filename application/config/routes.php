@@ -1,14 +1,8 @@
 <?php 
 
 Route::set('index.php', function (){
-	Welcome::view('index');
+	$data = Welcome::ListOfUser();
+	Welcome::view('index',$data);
 });
 
-Route::set('about-us', function (){
-	$data = AboutUsContrl::listUser();
-	AboutUsContrl::view('about-us',$data);
-});
 
-Route::set('contact-us', function (){
-	AboutUs::view('contact-us');
-});

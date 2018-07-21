@@ -4,7 +4,7 @@
 
 		private static $dbhost = "localhost";
 		private static $dbuser = "root";
-		private static $dbroot = "password!@#$";
+		private static $dbroot = "senpaijaro";
 		private static $dbname = "test";
 
 		function __construct(){
