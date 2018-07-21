@@ -107,12 +107,4 @@ class Model extends Database{
 		}
 	}
 
-	public function last_id($table,$field=array()){
-		if($table != "" && $field != ""){
-			$result = self::connection()->query("SELECT $field FROM $table WHERE $field");
-			return ($result) ? $result : $sql.'<br>'.$this->db->error;
-		}else{
-			die('Parameters is missing ');
-		}
-	}
 }
